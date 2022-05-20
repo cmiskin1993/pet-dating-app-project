@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
-function App() {
+import Home from './components/Home'
+import Navbar from './components/Navbar'
+import Feed from './components/profile/Feed'
+import UserProfile from './components/profile/UserProfile'
+import Login from './components/session/Login'
+import Signup from './components/session/Signup'
+
+const App = () => {
+  const [ currentUser, setCurrentUser ] = useState({})
+  const [loggedIn , setLoggedIn] = useState(false)
+
+  const loginUser = user => {
+    setCurrentUser(user);
+    setLoggedIn(true);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Router>
+    <Navbar />
+    {loggedIn ? <h1>logged in!</h1> : null }
+      <Routes>
+        <Route path="/" element ={<Home />} />
+        <Route path="/signup" element={<Signup loginUser={ loginUser } />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/profile" element={<UserProfile/>} />
+        <Route path="/feed" element={<Feed />} />
+      </Routes>
+    </Router>
+  )
 }
 
-export default App;
+export default App

@@ -1,0 +1,67 @@
+#form-container {
+    background: white;
+   border: 1px solid #dedede;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+   margin: 0 auto;
+   max-width: 500px;
+   padding: 30px 50px;
+}
+h2{
+    margin-top: 50px;
+    font-family: "MusticaPro-SemiBold";
+    text-align: center;
+    font-size: 40px;   
+}
+input[name="firstName"]:not(.edit-input) { 
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+    box-sizing: border-box;
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+input[name="lastName"]:not(.edit-input) { 
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+    box-sizing: border-box;
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+input[name="image"]:not(.edit-input) { 
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+    box-sizing: border-box;
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+textarea[name="bio"]:not(.edit-input) { 
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+    box-sizing: border-box;
+    padding: 10px;
+    margin-bottom: 30px;
+    width: 100%;
+}
+input[type="submit"] {
+    border: 1px solid;
+    border-radius: 0px;
+    background-color: rgba(255, 255, 255, 0);
+    border-color: rgb(250, 149, 197);
+    color: rgb(251, 117, 34);
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    cursor: pointer;
+}  
+input[type="submit"]:hover {
+    background: rgb(250, 149, 197);
+    color: white;
+}
