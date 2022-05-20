@@ -1,5 +1,5 @@
 #Navbar{
-    background-color: rgb(255, 0, 93);
+    background-color: rgb(22, 175, 106);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -23,10 +23,10 @@ li a{
     transition: all 0.3s ease 0s;
 }
 li a:hover{
-    color:rgb(249, 151, 14) 
+    color:rgb(1, 56, 32) 
 }
 li a.active{
-    color:rgb(249, 151, 14)   
+    color:rgb(1, 56, 32)   
 }
 #logo {
     cursor: pointer;
