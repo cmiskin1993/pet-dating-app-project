@@ -8,11 +8,11 @@ import UserProfile from './components/profile/UserProfile'
 import Login from './components/session/Login'
 import Signup from './components/session/Signup'
 import Logout from './components/session/Logout'
-import { baseUrl } from './Globals'
+import { baseUrl } from '/Users/cnestel-admin/Development/code/phase-2/phase-2-project-2/pet-dating-app-project/src/Globals.js'
 
 const App = () => {
   const [ currentUser, setCurrentUser ] = useState({})
-  const [loggedIn , setLoggedIn] = useState(false)
+  const [loggedIn, setLoggedIn] = useState(false);
 
   const loginUser = user => {
     setCurrentUser(user);
@@ -29,10 +29,9 @@ const App = () => {
   useEffect(() => {
     const userId = localStorage.getItem('user_id');
     if(userId && !loggedIn) {
-      fetch(baseUrl + '/users' + userId)
+      fetch(baseUrl + '/users/' + userId)
       .then(resp => resp.json())
       .then(data => loginUser(data))
-
     }
   }, [])
 
@@ -42,7 +41,7 @@ const App = () => {
       <Routes>
         <Route path="/" element ={<Home />} />
         <Route path="/signup" element={<Signup loginUser={ loginUser } />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<Login loginUser={ loginUser }/>} />
         <Route path="/logout" element={<Logout />} />
         <Route path="/profile" element={<UserProfile/>} />
         <Route path="/feed" element={<Feed />} />
