@@ -1,4 +1,24 @@
 {
   "users": [
+    {
+      "formInputs": {
+        "username": "cmiskin",
+        "firstName": "Carrie",
+        "lastName": "Miskin",
+        "image": "none",
+        "bio": "none"
+      },
+      "id": 1
+    },
+    {
+      "formInputs": {
+        "username": "mmiskin",
+        "firstName": "Meir",
+        "lastName": "Miskin",
+        "image": "none",
+        "bio": "none"
+      },
+      "id": 2
+    }
   ]
 }

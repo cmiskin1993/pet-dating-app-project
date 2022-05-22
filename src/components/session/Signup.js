@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import '../stylesheets/Signup.css'
+import '../stylesheets/Forms.css'
 import { baseUrl, headers } from '/Users/cnestel-admin/Development/code/phase-2/phase-2-project-2/pet-dating-app-project/src/Globals.js'
 import { useNavigate } from 'react-router-dom'
 
@@ -7,10 +7,11 @@ import { useNavigate } from 'react-router-dom'
 const Signup = ({loginUser}) => {
 
 const [formInputs, setFormInputs] = useState({
-    firstName:'',
-    lastName:'',
-    image:'',
-    bio:''
+  username:'',
+  firstName:'',
+  lastName:'',
+  image:'',
+  bio:''
 })
 
 const navigate = useNavigate();
@@ -33,11 +34,12 @@ const handleSubmit = e => {
   })
   .then(resp => resp.json())
   .then(data => {
-    loginUser(data)
-    navigate('/profile') 
+    loginUser(data);
+    navigate('/profile'); 
 
   })
   setFormInputs({
+    username:'',
     firstName:'',
     lastName:'',
     image:'',
@@ -47,9 +49,13 @@ const handleSubmit = e => {
 
   return (
     <div>
-      <h2>One Step Closer to <br/> Finding Your Bestfriend</h2>
+      <h2>One step closer to <br/> finding your bestfriend</h2>
 
         <form onSubmit={ handleSubmit } id="form-container">
+        <div> 
+            <label> Username:</label>
+            <input type="text" name='username' value={ formInputs.username } onChange={handleChange} />
+          </div>
           <div> 
             <label> First Name:</label>
             <input type="text" name='firstName' value={ formInputs.firstName } onChange={handleChange} />

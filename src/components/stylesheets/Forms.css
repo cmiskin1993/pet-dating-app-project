@@ -14,6 +14,15 @@ h2{
     text-align: center;
     font-size: 40px;   
 }
+input[name="userName"]:not(.edit-input) { 
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+    box-sizing: border-box;
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+}
 input[name="firstName"]:not(.edit-input) { 
     border: 1px solid #d9d9d9;
     border-radius: 4px;
@@ -64,4 +73,14 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background: rgb(250, 149, 197);
     color: white;
+}
+
+input[name="username"]:not(.edit-input) { 
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+    box-sizing: border-box;
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 100%;
 }
