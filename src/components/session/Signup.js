@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import '../stylesheets/Forms.css'
 import { baseUrl, headers } from '/Users/cnestel-admin/Development/code/phase-2/phase-2-project-2/pet-dating-app-project/src/Globals.js'
 import { useNavigate } from 'react-router-dom'
 
 
-const Signup = ({loginUser}) => {
+const Signup = ({loginUser, addErrors, clearErrors}) => {
 
 const [formInputs, setFormInputs] = useState({
   username:'',
@@ -27,6 +27,9 @@ const handleChange = event => {
 const handleSubmit = e => {
   e.preventDefault();
 
+  if(formInputs.bio.length >= 1) {
+    
+
   fetch(baseUrl + '/users', {
     method: "POST",
     headers,
@@ -35,9 +38,11 @@ const handleSubmit = e => {
   .then(resp => resp.json())
   .then(data => {
     loginUser(data);
-    navigate('/profile'); 
-
+    navigate('/profile');
   })
+}else{
+  addErrors(['All fields must be completed'])
+}
   setFormInputs({
     username:'',
     firstName:'',
@@ -46,6 +51,12 @@ const handleSubmit = e => {
     bio:''
   })
 }
+
+useEffect(() => {
+  return () => {
+    clearErrors();
+  }
+}, [])
 
   return (
     <div>

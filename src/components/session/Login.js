@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import '../stylesheets/Forms.css'
 import { baseUrl } from '/Users/cnestel-admin/Development/code/phase-2/phase-2-project-2/pet-dating-app-project/src/Globals.js'
 
-const Login = ( {loginUser } ) => {
+const Login = ( {loginUser, addErrors, clearErrors } ) => {
 const [username, setUserName] = useState("");
 const [users, setUsers] = useState([]);
 
@@ -20,6 +20,8 @@ const handleSubmit = e => {
   if(user) {
     loginUser(user);
     navigate("/profile")
+  }else{
+    addErrors(["username does not exist"])
   }
 }
 
@@ -27,7 +29,12 @@ useEffect(() => {
   fetch(baseUrl + "/users/")
   .then(resp => resp.json())
   .then(data => setUsers(data))
+
+return () => {
+clearErrors();
+}
 }, [])
+
 
   return (
     <div>

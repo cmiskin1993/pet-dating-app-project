@@ -2,7 +2,6 @@ import React from 'react'
 import './stylesheets/Navbar.css'
 import { NavLink } from 'react-router-dom'
 
-
 const Navbar = ({ loggedIn, logoutUser }) => {
 
   const logout = e => {

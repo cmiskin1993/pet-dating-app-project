@@ -9,10 +9,12 @@ import Login from './components/session/Login'
 import Signup from './components/session/Signup'
 import Logout from './components/session/Logout'
 import { baseUrl } from '/Users/cnestel-admin/Development/code/phase-2/phase-2-project-2/pet-dating-app-project/src/Globals.js'
+import Errors from './components/static/Errors'
 
 const App = () => {
-  const [ currentUser, setCurrentUser ] = useState({})
+  const [ currentUser, setCurrentUser ] = useState({});
   const [loggedIn, setLoggedIn] = useState(false);
+  const [errors, setErrors] = useState([]);
 
   const loginUser = user => {
     setCurrentUser(user);
@@ -26,6 +28,15 @@ const App = () => {
     localStorage.removeItem('user_id')
   }
 
+  const addErrors = errors => {
+    setErrors(errors)
+  }
+
+  const clearErrors = () => {
+    setErrors([])
+  }
+
+
   useEffect(() => {
     const userId = localStorage.getItem('user_id');
     if(userId && !loggedIn) {
@@ -33,16 +44,17 @@ const App = () => {
       .then(resp => resp.json())
       .then(data => loginUser(data))
     }
-  }, [])
+  }, [loggedIn])
 
   return (
     <Router>
     <Navbar loggedIn={ loggedIn } logoutUser={ logoutUser } />
+    <Errors errors={ errors } />
       <Routes>
         <Route path="/" element ={<Home />} />
-        <Route path="/signup" element={<Signup loginUser={ loginUser } />} />
-        <Route path="/login" element={<Login loginUser={ loginUser }/>} />
-        <Route path="/logout" element={<Logout />} />
+        <Route path="/signup" element={<Signup loginUser={ loginUser } addErrors={ addErrors } clearErrors={ clearErrors } />} />
+        <Route path="/login" element={<Login loginUser={ loginUser } addErrors={ addErrors } clearErrors={ clearErrors } />} />
+        <Route path="/logout" element={<Logout logoutUser={ logoutUser } />} />
         <Route path="/profile" element={<UserProfile/>} />
         <Route path="/feed" element={<Feed />} />
       </Routes>
