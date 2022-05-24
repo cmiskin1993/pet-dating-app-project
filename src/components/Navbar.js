@@ -13,7 +13,7 @@ const loggedInLinks = () => {
   return(
     <ul>
         <li><NavLink to="/profile">My Profile</NavLink></li>
-        <li><NavLink to="/feed">Find My Dog</NavLink></li>
+        <li><NavLink to="/matches">Matches</NavLink></li>
         <li><a href="#" onClick={ logout }>Logout</a></li>
     </ul>
   )

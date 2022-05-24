@@ -4,7 +4,7 @@ import { baseUrl, headers } from '/Users/cnestel-admin/Development/code/phase-2/
 import { useNavigate } from 'react-router-dom'
 
 
-const Signup = ({loginUser, addErrors, clearErrors}) => {
+const Signup = ({loggedIn, loginUser, addErrors, clearErrors}) => {
 
 const [formInputs, setFormInputs] = useState({
   username:'',
@@ -53,10 +53,13 @@ const handleSubmit = e => {
 }
 
 useEffect(() => {
+  if(loggedIn){
+    navigate('/profile')
+  }
   return () => {
     clearErrors();
   }
-}, [])
+}, [loggedIn])
 
   return (
     <div>
@@ -83,8 +86,7 @@ useEffect(() => {
             <label> Bio:</label>
             <textarea name='bio' value={ formInputs.bio } onChange={handleChange} />
           </div>
-
-          <input type="submit" value="submit" />
+          <input type="submit" value="Signup"/>
         </form>
 
     </div>

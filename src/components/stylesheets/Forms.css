@@ -14,7 +14,7 @@ h2{
     text-align: center;
     font-size: 40px;   
 }
-input[name="userName"]:not(.edit-input) { 
+input[name="username"]:not(.edit-input) { 
     border: 1px solid #d9d9d9;
     border-radius: 4px;
     box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
