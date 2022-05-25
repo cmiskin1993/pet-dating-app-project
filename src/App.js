@@ -52,11 +52,11 @@ const App = () => {
     <Errors errors={ errors } />
       <Routes>
         <Route path="/" element ={<Home />} />
-        <Route path="/signup" element={<Signup loggedIn={loggedIn} loginUser={ loginUser } addErrors={ addErrors } clearErrors={ clearErrors } />} />
-        <Route path="/login" element={<Login loggedIn={loggedIn} loginUser={ loginUser } addErrors={ addErrors } clearErrors={ clearErrors } />} />
+        <Route path="/signup" element={<Signup loggedIn={ loggedIn } loginUser={ loginUser } addErrors={ addErrors } clearErrors={ clearErrors } />} />
+        <Route path="/login" element={<Login loggedIn={ loggedIn } loginUser={ loginUser } addErrors={ addErrors } clearErrors={ clearErrors } />} />
         <Route path="/logout" element={<Logout />} />
-        <Route path="/profile" element={<UserProfile currentUser={currentUser} />} />
-        <Route path="/matches" element={<Matches loggedIn={loggedIn} currentUser={currentUser} />} />
+        <Route path="/profile" element={<UserProfile currentUser={ currentUser } />} />
+        <Route path="/matches" element={<Matches loggedIn={ loggedIn } currentUser={ currentUser } />} />
       </Routes>
     </Router>
   )
