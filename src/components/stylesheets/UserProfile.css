@@ -1,44 +1,49 @@
-section {
-    position: relative;
+.container {
     display: flex;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
-    background-color: #fff;
-    background-clip: border-box;
-    border: 0 solid rgba(0,0,0,.125);
-    border-radius: .25rem;
-    flex: 1 1 auto;
-    min-height: 1px;
-    padding: 1rem;
-}
-.header {
-    padding: 60px;
-    background: #1abc9c;
-    font-size: 30px;
-    margin-top: 100px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
     
-  }
+    padding: 50px;
+    transition: 0.3s;
+    margin-left: auto;
+    margin-right: auto;
+    float: center;
+    width: 350px;
+    height: 500px;
+}
+.profile_photo {
+    position: relative;
+    width: 350px;
+    max-width: 100%;
+}
 h2{
-    color: #fff;
     font-size: 45px;
     font-weight: 700;
     margin: 0 0 6px;
-    }
-.profile_photo{
-    position: absolute;
-    display: flex;
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    border: 6px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
 }
 .bio_container{
-    margin: 90px;
+    text-align: center;
 }
 h3{
-    font-size: 20px;
-    }
+    font-size: 18px;
+}
 p{
-    font-size: 20px;
-    }
+	font-size: 18px;
+	line-height: 21px;
+}
+button.primary {
+    border: 1px solid;
+    border-radius: 0px;
+    background-color: rgba(255, 255, 255, 0);
+    border-color: rgb(250, 149, 197);
+    color: rgb(251, 117, 34);
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+button.primary:hover{
+    background: rgb(250, 149, 197);
+    color: white;
+}

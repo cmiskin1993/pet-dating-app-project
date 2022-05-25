@@ -11,6 +11,10 @@ const Matches = ({loggedIn }) => {
     }
   }, [loggedIn])
 
+  fetch ("https://dog.ceo/api/breeds/list/all")
+  .then(resp => resp.json())
+  .then(dogData => console.log(dogData))
+
   return (
     <div>
       <h2>Matches</h2>
