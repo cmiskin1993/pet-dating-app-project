@@ -1,0 +1,60 @@
+.cards {
+  list-style: none;
+  
+}
+.card {
+  width: 400px;
+  overflow: hidden;
+  background-color: #fdfcfc;
+  color: #000;
+  border-radius: 7px;
+  box-shadow: -4px -4px 20px rgba(0, 0, 0, 0.505);
+  margin: 1rem;
+
+  padding: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+  transition: 0.3s;
+  text-align: center;
+  background-color: #fdfcfc;
+}
+
+.top-card {
+  width: 100%;
+}
+
+.top-card img {
+  width: 100%;
+}
+
+.vl {
+  border-top: 3px solid rgb(22, 175, 106);
+}
+
+h3{
+  font-size: 22px;
+  color: #000;
+  margin: 12px 0;
+  text-align: center;
+}
+p{
+  font-size: 22px;
+  color: #000;
+  margin: 12px 0;
+  text-align: center;
+  line-height: 25px;
+}
+button{
+  border: 1px solid;
+    border-radius: 0px;
+    background-color: rgba(255, 255, 255, 0);
+    border-color: rgb(250, 149, 197);
+    color: rgb(251, 117, 34);
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 30%;
+    cursor: pointer;
+}
+button:hover{
+  background: rgb(250, 149, 197);
+  color: white;
+}

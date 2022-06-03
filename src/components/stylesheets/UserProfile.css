@@ -16,6 +16,7 @@
     position: relative;
     width: 350px;
     max-width: 100%;
+    border-radius: 10px;
 }
 h2{
     font-size: 45px;
@@ -31,7 +32,7 @@ h3{
 }
 p{
 	font-size: 18px;
-	line-height: 21px;
+	line-height: 25px;
 }
 button.primary {
     border: 1px solid;
@@ -47,3 +48,4 @@ button.primary:hover{
     background: rgb(250, 149, 197);
     color: white;
 }
+

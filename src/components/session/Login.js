@@ -7,7 +7,7 @@ const Login = ( {loggedIn, loginUser, addErrors, clearErrors } ) => {
 const [username, setUserName] = useState("");
 const [users, setUsers] = useState([]);
 
-const navigate = useNavigate(0);
+const navigate = useNavigate();
 
 const handleChange = e => {
   setUserName(e.target.value);
@@ -19,7 +19,6 @@ const handleSubmit = e => {
   const user = users.find(user => user.formInputs.username.toLowerCase() === username.toLowerCase());
   if(user) {
     loginUser(user);
-    navigate("/profile")
   }else{
     addErrors(["username does not exist"])
   }

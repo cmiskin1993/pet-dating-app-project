@@ -84,3 +84,21 @@ input[name="username"]:not(.edit-input) {
     margin-bottom: 20px;
     width: 100%;
 }
+select{
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+    box-sizing: border-box;
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+input[id="zip"]:not(.edit-input) { 
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+    box-sizing: border-box;
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+}

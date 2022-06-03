@@ -1,8 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom';
 import '../stylesheets/UserProfile.css'
 
 
-const UserProfile = ({ currentUser }) => {
+const UserProfile = ({ currentUser, loggedIn }) => {
+    
+
+    const navigate = useNavigate();
+
+    useEffect(() => {
+      if(!loggedIn){
+        navigate('/login')
+      }
+    }, [loggedIn, navigate])
+  
 
   return (
       <div className="container" > 
@@ -16,7 +27,7 @@ const UserProfile = ({ currentUser }) => {
             <p>{currentUser.formInputs.bio}</p> 
         </div>
 
-            <button className="primary ghost">Follow</button>
+            {/* <button className="primary ghost">Follow</button> */}
             
       </div>
 
