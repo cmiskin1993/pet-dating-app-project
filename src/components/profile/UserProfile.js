@@ -14,6 +14,10 @@ const UserProfile = ({ currentUser, loggedIn }) => {
       }
     }, [loggedIn, navigate])
   
+if(!loggedIn){
+  return <h1>Loading...</h1>
+}
+
 
   return (
       <div className="container" > 

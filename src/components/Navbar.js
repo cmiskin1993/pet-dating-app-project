@@ -1,12 +1,15 @@
 import React from 'react'
 import './stylesheets/Navbar.css'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 
 const Navbar = ({ loggedIn, logoutUser }) => {
+
+  const navigate = useNavigate();
 
   const logout = e => {
     e.preventDefault();
     logoutUser();
+    navigate("/")
   }
 
 const loggedInLinks = () => {
@@ -14,7 +17,7 @@ const loggedInLinks = () => {
     <ul>
         <li><NavLink to="/profile">My Profile</NavLink></li>
         <li><NavLink to="/matches">Matches</NavLink></li>
-        <li><a href="http://localhost:3000/login" onClick={ logout }>Logout</a></li>
+        <li><a href="#" onClick={ logout }>Logout</a></li>
     </ul>
   )
 }

@@ -26,7 +26,7 @@ const App = ({ pets }) => {
 
   const logoutUser = () => {
     setCurrentUser({});
-    setCurrentUser(false)
+    setLoggedIn(false)
     localStorage.removeItem('user_id')
   }
 
