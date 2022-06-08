@@ -9,7 +9,7 @@ const Navbar = ({ loggedIn, logoutUser }) => {
   const logout = e => {
     e.preventDefault();
     logoutUser();
-    navigate("/")
+    navigate("/");
   }
 
 const loggedInLinks = () => {

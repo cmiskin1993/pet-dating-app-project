@@ -15,7 +15,7 @@ const UserProfile = ({ currentUser, loggedIn }) => {
     }, [loggedIn, navigate])
   
 if(!loggedIn){
-  return <h1>Loading...</h1>
+  return <h2>Loading...</h2>
 }
 
 
@@ -30,8 +30,6 @@ if(!loggedIn){
             <h3>About Me </h3>
             <p>{currentUser.formInputs.bio}</p> 
         </div>
-
-            {/* <button className="primary ghost">Follow</button> */}
             
       </div>
 
