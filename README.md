@@ -8,7 +8,6 @@ My pet dating app matches you with your man's best friend. It functions similar 
 ### Requirements
 * Install JSON server on your computer if not installed already
 * Run JSON server on 3001 port
-* 
 * Download fonts
      - Capuche Trial
      - MusticaPro-SemiBold
@@ -16,5 +15,6 @@ My pet dating app matches you with your man's best friend. It functions similar 
 
 ### How to install / use
 * Fork and clone repository into your own GitHub
-* Run json-server --watch db.json to start the server
-* Open index.html in the browser
+* Run json-server --port 3001 --watch db.json to start the server
+* npm install
+* npm start
