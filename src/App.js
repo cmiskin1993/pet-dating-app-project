@@ -12,7 +12,9 @@ import Logout from './components/session/Logout'
 import { baseUrl } from '/Users/cnestel-admin/Development/code/phase-2/phase-2-project-2/pet-dating-app-project/src/Globals.js'
 import Errors from './components/static/Errors'
 
-const App = ({ pets }) => {
+
+const App = () => {
+
   const [currentUser, setCurrentUser] = useState({});
   const [loggedIn, setLoggedIn] = useState(false);
   const [errors, setErrors] = useState([]);
@@ -47,24 +49,20 @@ const App = ({ pets }) => {
     }
   }, [loggedIn])
 
-  
-
-
-
 
   return (
-    <Router>
-    <Navbar loggedIn={ loggedIn } logoutUser={ logoutUser } />
-    <Errors errors={ errors } />
-      <Routes>
-        <Route path="/" element ={<Home />} />
-        <Route path="/signup" element={<Signup loggedIn={ loggedIn } loginUser={ loginUser } addErrors={ addErrors } clearErrors={ clearErrors } />} />
-        <Route path="/login" element={<Login loggedIn={ loggedIn } loginUser={ loginUser } addErrors={ addErrors } clearErrors={ clearErrors } />} />
-        <Route path="/logout" element={<Logout />} />
-        <Route path="/profile" element={<UserProfile loggedIn={ loggedIn } currentUser={ currentUser } />} />
-        <Route path="/matches" element={<Matches loggedIn={ loggedIn } pets={ pets } />} />
-      </Routes>
-    </Router>
+        <Router>
+        <Navbar loggedIn={ loggedIn } logoutUser={ logoutUser }  />
+        <Errors errors={ errors } />
+          <Routes>
+            <Route path="/" element ={<Home />} />
+            <Route path="/signup" element={<Signup loggedIn={ loggedIn } loginUser={ loginUser } addErrors={ addErrors } clearErrors={ clearErrors } />} />
+            <Route path="/login" element={<Login loggedIn={ loggedIn } loginUser={ loginUser } addErrors={ addErrors } clearErrors={ clearErrors } />} />
+            <Route path="/logout" element={<Logout />} />
+            <Route path="/profile" element={<UserProfile loggedIn={ loggedIn } currentUser={ currentUser } />} />
+            <Route path="/matches" element={<Matches loggedIn={ loggedIn }  />} />
+          </Routes>
+        </Router>
   )
 }
 

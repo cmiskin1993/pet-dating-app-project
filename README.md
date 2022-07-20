@@ -15,6 +15,6 @@ My pet dating app matches you with your man's best friend. It functions similar 
 
 ### How to install / use
 * Fork and clone repository into your own GitHub
-* Run json-server make sure you cd in src first --port 3001 --watch db.json to start the server
+* Run json-server make sure you cd in src first json-server --port 3001 --watch db.json to start the server
 * npm install
 * npm start

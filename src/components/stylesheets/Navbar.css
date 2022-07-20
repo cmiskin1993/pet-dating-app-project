@@ -34,3 +34,14 @@ li a.active{
     max-height: 80px;
     margin-top: 20%;
 }
+.theme-toggle i{
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+#dark{
+    background-color: black;
+}
+#light{
+    background-color: azure;
+}

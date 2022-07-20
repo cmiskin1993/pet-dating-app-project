@@ -1,8 +1,8 @@
-import React from 'react'
+import React from 'react';
 import './stylesheets/Navbar.css'
 import { NavLink, useNavigate } from 'react-router-dom'
 
-const Navbar = ({ loggedIn, logoutUser }) => {
+const Navbar = ({ loggedIn, logoutUser}) => {
 
   const navigate = useNavigate();
 

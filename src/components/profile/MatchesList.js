@@ -15,21 +15,6 @@ const MatchesList = ({loggedIn }) => {
   const handleChangeType = (gender) => {
     setFilters({ gender: gender });
   }
-
-const handleFindPetsClick = () => {
-    let url = "http://localhost:3001/pets";
-
-    if (filters.gender !== "all") {
-      url += `?gender=${filters.gender}`;
-    }
-
-    fetch(url)
-    .then((resp) => resp.json())
-    .then((petsArray) => {
-      setPets(petsArray);
-    });
-}
-
   
 const navigate = useNavigate();
 
@@ -37,19 +22,42 @@ const navigate = useNavigate();
     if(!loggedIn){
       navigate('/login')
     }
+      let url = "http://localhost:3001/pets";
+
+      fetch(url)
+      .then((resp) => resp.json())
+      .then((petsArray) => {
+        setPets(petsArray);
+      })
   }, [loggedIn, navigate])
+
+  const handlePetFilterClick = () => {
+
+    let url = "http://localhost:3001/pets";
+    if (filters.gender !== "all") {
+      url += `?gender=${filters.gender}`;
+    }
+    fetch(url)
+    .then((resp) => resp.json())
+    .then((petsArray) => {
+      setPets(petsArray);
+    });
+}
+
+const deleteCard = pet => {
+  setPets(pets.filter(pets => pets.id !== pet.id))
+}
   
 
   return (
-
+  
     <ul className="cards">
-            <Filters
-          onChangeType={handleChangeType}
-          onFindPetsClick={handleFindPetsClick}
-        />
-        {pets.map((pet) => {
-          return <MatchesCard key={pet.id} pet={pet} />;
-        })}
+        <Filters onChangeType={handleChangeType} onPetFilterClick={handlePetFilterClick} />
+            <div>
+                {pets.map((pet) => (
+                <MatchesCard key={pet.id} pet={pet} deleteCard={deleteCard} />
+                ))}
+            </div>
     </ul>
 
   )

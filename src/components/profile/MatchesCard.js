@@ -3,7 +3,11 @@ import '/Users/cnestel-admin/Development/code/phase-2/phase-2-project-2/pet-dati
 
 
 
-const MatchesCard = ({ pet }) => {
+const MatchesCard = ({ pet, deleteCard }) => {
+
+  const handleDelete = () => {
+    deleteCard(pet)
+  }
 
   return (
           <li className="card">
@@ -17,7 +21,7 @@ const MatchesCard = ({ pet }) => {
 
                       <div className="vl"></div>
                       <p> {pet.bio} </p>
-                      <button>Adopt Me</button>
+                      <button onClick={handleDelete}>Adopt Me</button>
           </li>
   )
 }

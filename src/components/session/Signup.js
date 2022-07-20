@@ -6,6 +6,9 @@ import { useNavigate } from 'react-router-dom'
 
 const Signup = ({loggedIn, loginUser, addErrors, clearErrors}) => {
 
+const [count, setCount] = useState(0);
+
+
 const [formInputs, setFormInputs] = useState({
   username:'',
   firstName:'',
@@ -14,13 +17,16 @@ const [formInputs, setFormInputs] = useState({
   bio:''
 })
 
+
 const navigate = useNavigate();
 
-const handleChange = event => {
+const handleChange = e => {
   setFormInputs({
     ...formInputs,
-    [event.target.name]: event.target.value
+    [e.target.name]: e.target.value
   })
+
+  setCount(e.target.value.length)
 }
 
 
@@ -61,6 +67,7 @@ useEffect(() => {
   }
 }, [loggedIn])
 
+
   return (
     <div>
       <h2>One step closer to <br/> finding your bestfriend</h2>
@@ -83,8 +90,8 @@ useEffect(() => {
             <input type="text" name='image' value={ formInputs.image } onChange={handleChange} />
           </div>
           <div> 
-            <label> Bio:</label>
-            <textarea name='bio' value={ formInputs.bio } onChange={handleChange} />
+            <label> Bio: {count} </label>
+            <textarea name='bio' value={ formInputs.bio } onChange={handleChange}  />
           </div>
           <input type="submit" value="Signup"/>
         </form>
